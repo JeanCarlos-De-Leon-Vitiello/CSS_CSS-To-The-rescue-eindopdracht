@@ -105,4 +105,13 @@ Chrome splitten van webkit en maakte blink rendering engine
 Tijdens de feedback sessie heb ik mijn idee kunnen tonen en heb ik tips kunnen krijgen over hoe ik dit kan aanpakken. Ik kreeg van Nils ook een bron waar ik naar kan gaan kijken dat gaat over de annimatie van de machine:
 https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-composition
 
+## Week 1 Samenvatting
+In week 1 van Sprint 2 ben ik gestart met CSS to the Rescue. We oefenden met CSS-selectors, wat ik lastig vond omdat ik normaal vooral met classes en id’s werk. 
 
+Daarna werkte ik in een groep aan het onderwerp CSS anchors. Ik maakte een kleine animatie waarin elementen van het ene anker naar het andere bewegen. Ik leerde dat ankers veel vrijheid geven in positionering, maar dat animeren niet altijd eenvoudig is.
+
+Op dag 2 koos ik voor de Control Panel eindopdracht. Mijn idee is om een slotmachine te maken. Na overleg en feedback heb ik een schets gemaakt en ben ik begonnen met de eerste opzet. Ik leerde hoe ik een gradient goed toepas en dat de body een hoogte nodig heeft om correct te werken.
+
+Tijdens de Weekly Nerd van Peter-Paul Koch leerde ik meer over hoe browsers werken en over de geschiedenis van browsers. Vooral het principe van backward compatibility vond ik interessant.
+
+In de feedbacksessie kreeg ik tips over de animatie van mijn slotmachine. Volgende week ga ik verder met het bouwen van het eerste draaiende wiel.
