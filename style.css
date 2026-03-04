@@ -7,18 +7,23 @@
 body {
     background-image: linear-gradient(180deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
     background-size: 100% 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 main{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 60vh;
     width: 100vw;
 }
 
 /* section met de draai wielen */
-main section:nth-child(1) {
+main section:nth-child(3) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,15 +31,19 @@ main section:nth-child(1) {
     perspective: 1000px;
 }
 
-main section:nth-child(1) svg {
+main section:nth-child(3) svg {
     width: 8vw;
     height: 8vh;
 }
 
-main section:nth-child(1) div > div {
+main section:nth-child(3) div > div {
     background-color: white;
-     width: 200px;
-    height: 200px;
+
+    /* width: 200px;
+    height: 200px; */
+
+    width: min(25vw, 200px);
+    height: min(25vw, 200px);
 
     position: relative;
     display: flex;
@@ -43,16 +52,20 @@ main section:nth-child(1) div > div {
 }
 
 /* Cube maken */
-main section:nth-child(1) > div{
+main section:nth-child(3) > div{
     margin: 10px;
-    width: 200px;
-    height: 200px;
+
+    /* width: 200px;
+    height: 200px; */
+
+    width: min(25vw, 200px);
+    height: min(25vw, 200px);
 
     transform-style: preserve-3d;
 }
 
 /* test annimatie */
-  main section:nth-child(1) > div {
+    /* main section:nth-child(3) > div {
     animation: spin 5s linear infinite;
 }
 
@@ -63,10 +76,10 @@ main section:nth-child(1) > div{
     100% {
         transform: rotateX(0deg);
     }
-}  
+}   */
 
 
-main section:nth-child(1) div div{
+main section:nth-child(3) div div{
     margin: 0px;
 
     position: absolute;
@@ -75,19 +88,69 @@ main section:nth-child(1) div div{
     transform-origin: center center;
 }
 
-main section:nth-child(1) div div:nth-child(1) {
-    transform: translateZ(100px); 
+/* Oude versie :
+main section:nth-child(3) div div:nth-child(1) {
+    transform: translateZ(100px);
 }
 
-main section:nth-child(1) div div:nth-child(2) {
+main section:nth-child(3) div div:nth-child(2) {
     transform: rotateY(180deg) translateZ(100px);
 }
 
-main section:nth-child(1) div div:nth-child(3) {
+main section:nth-child(3) div div:nth-child(3) {
     transform: rotateX(90deg) translateZ(100px);
 }
 
-main section:nth-child(1) div div:nth-child(4) {
+main section:nth-child(3) div div:nth-child(4) {
     transform: rotateX(-90deg) translateZ(100px);
 }
+*/
 
+
+main section:nth-child(3) div div:nth-child(1) {
+    transform: translateZ(calc(min(25vw, 200px) / 2));
+}
+
+main section:nth-child(3) div div:nth-child(2) {
+    transform: rotateY(180deg) translateZ(calc(min(25vw, 200px) / 2));
+}
+
+main section:nth-child(3) div div:nth-child(3) {
+    transform: rotateX(90deg) translateZ(calc(min(25vw, 200px) / 2));
+}
+
+main section:nth-child(3) div div:nth-child(4) {
+    transform: rotateX(-90deg) translateZ(calc(min(25vw, 200px) / 2));
+}
+
+/* section voor de kast */
+
+/* section voor de header */
+header{
+    width: 100vw;
+    height: 20vh;
+}
+
+/* Section voor de knoppen */
+footer {
+    width: 100vw;
+    height: 20vh;
+}
+
+/* spin actie knop */
+body:has(input[name="spin"][value="spin"]:checked) main section:nth-child(3) > div {
+    animation: spin 1.6s cubic-bezier(.2,.9,.2,1) 1 forwards;
+}
+
+/* bron: https://webkit.org/blog/17285/rolling-the-dice-with-css-random/?utm_source=chatgpt.com */
+@keyframes spin {
+  from { transform: rotateX(0deg); }
+  to {
+    transform: rotateX(
+      calc(
+        random(8turn, 14turn, 1turn)
+        + random(0deg, 270deg, 90deg)
+      )
+    );
+  }
+}
