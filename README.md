@@ -122,3 +122,103 @@ Op dag 2 koos ik voor de Control Panel eindopdracht. Mijn idee is om een slotmac
 Tijdens de Weekly Nerd van Peter-Paul Koch leerde ik meer over hoe browsers werken en over de geschiedenis van browsers. Vooral het principe van backward compatibility vond ik interessant.
 
 In de feedbacksessie kreeg ik tips over de animatie van mijn slotmachine. Volgende week ga ik verder met het bouwen van het eerste draaiende wiel.
+
+## Vakantie
+Tijdens de vakantie wilde ik niet echt werken aan de opdracht maar ik heb toch twee dagen genomen om een begin te maken aan cubes maken aangezien ik er een aantal nodig heb. Ik wilde beginnen met het maken van 3 cubes om zo de draai rollen te maken die in de kast zit.
+![figma-ontwerp](./Image/Scherm­afbeelding%202026-02-26%20om%2013.54.46.png)
+
+Ik heb de volgende bron geraadpleegd om mij opweg te helpen bij het maken van een cube: https://miocene.io/post/3d-cube-with-css/
+
+Hier laat Julia Miocene zien hoe je aan de hand van de elemenet, before en een after een cube maken. In mijn situatie heb ik ervoor gekozen om de cube te maken door een aantal divs te gebruiken en daar svg's in te stoppen.
+![figma-ontwerp](./Image/rolle%20.png)
+
+Eenmaal gelukt heb ik de cubes getest met een test annimatie. De uiteindelijke annimatie die ik wil gaan doen is de random die nu alleen nog in safari beschikbaar is. Daarvoor heb ik de volgende bron gebruikt: https://webkit.org/blog/17285/rolling-the-dice-with-css-random/
+
+random op de annimatie:
+@keyframes spin {
+  from { transform: rotateX(0deg); }
+  to {
+    transform: rotateX(
+      calc(
+        random(8turn, 14turn, 1turn)
+        + random(0deg, 270deg, 90deg)
+      )
+    );
+  }
+}
+
+## Week 2/ Dag 1
+
+**Wat heb ik vandaag gedaan:**
+Vandaag ben ik bezig geweest met het maken van de kast van de slot machine. Opzich was het het zelfde als bij het maken van de wielen van de slot machine maar omdat het een reacht hoek was moesten de zijkanten/boevenkante een ander format krijgen. Dat besefte ik helaas niet dus was ik lang bezig met uitzoeken waarom het niet goed werkte. Dankzij sanne besefte ik dat het door de format was van de faces.
+
+**Hoelang duurde het:**
+het duurde me ongeveer 3 uurtjes om het goed te krijgen.
+
+**Wat heb ik geleerd:**
+Ik heb geleerd om varible width,hight en diepte te gebruiken om zo de cube zijdes de juiste format te geven. de min(0,0) zorgt voor een minimale en maximale format.
+--w:min(90vw, 800px);
+--h:calc( var(--w) * .6 );
+--d:calc( var(--w) * .6 );
+
+en dan veranderen bij de zijdes
+width:var(--d);
+height:var(--h);
+
+Ook ben ik erachter gekomen dat ik niet woor elke 3d object een scene hoeft te maken maar beter 1 grote scene maken waar alle 3d objecten in zitten.
+
+**Wat ga ik morgen doen:**
+Morgen wil ik bezig gaan met de hendel van de slotmachine door de elementen te nesten om zo 1 hendel te creeeren. Dit zorgt ervoor dat ik meer kan oefenen met wat ik op dag 1 heb kunnen leren.
+
+## Weekly Nerd (Nils binder)
+
+
+<details>
+<summary>Notes</summary>
+9elements
+
+Units at 9 elements:
+Communication design
+Product development 
+Web development 
+
+They try to work together and work at office so the different departments can work together.
+
+Schalke 04 ux design
+Interessant hoe verschillende afdelingen binnen een team idee brengen to zo een groot project.
+Vroeger gebruikte mensen van alles om websites te ontwerpen zo als photoshop.
+
+De manier om een drop shadow to zetten in photoshop is heel ingewikkeld vergeleken met figma. 
+
+Figma is ingesteld zo als css. Als je kijkt naar aligning dan is dit eigelijk net als flexbox.
+Vroeger waren bepaalde dingen die je deed in photoshop niet mogelijk op de web. Nu is het anders nu is niet alles wat je op de web kan doen kan je doen in figma.
+Animatie kan je met stappen doen dus als je 30 images heb dan kan je dat in stappen tonen zodat het lijkt alsof het een 3d element is die draait
+Subgrid
+First line selector om een eerste line van een text te stylen
+Viewtransitions loads a new page
+
+</details>
+
+## Week 2/ Dag 2
+
+**Wat heb ik vandaag gedaan:**
+
+
+**Hoelang duurde het:**
+
+
+**Wat heb ik geleerd:**
+
+
+**Wat ga ik morgen doen:**
+
+
+## Bronnen
+Cube:
+https://miocene.io/post/3d-cube-with-css/
+
+Transform origin: 
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transform-origin
+
+Random (Safari only):
+https://webkit.org/blog/17285/rolling-the-dice-with-css-random/

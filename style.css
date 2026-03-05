@@ -12,6 +12,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+
+    perspective: 1000px;
+    transform-style:preserve-3d;
+}
+
+body * {
+    transform-style:preserve-3d;
 }
 
 main{
@@ -20,6 +28,9 @@ main{
     justify-content: center;
     height: 60vh;
     width: 100vw;
+    position: relative;
+
+    rotate: y -20deg;
 }
 
 /* section met de draai wielen */
@@ -28,7 +39,7 @@ main section:nth-child(3) {
     align-items: center;
     justify-content: center;
 
-    perspective: 1000px;
+    /* perspective: 1000px; */
 }
 
 main section:nth-child(3) svg {
@@ -61,7 +72,7 @@ main section:nth-child(3) > div{
     width: min(25vw, 200px);
     height: min(25vw, 200px);
 
-    transform-style: preserve-3d;
+    /* transform-style: preserve-3d; */
 }
 
 /* test annimatie */
@@ -124,6 +135,101 @@ main section:nth-child(3) div div:nth-child(4) {
 }
 
 /* section voor de kast */
+/* scene */
+main section:nth-child(1) {
+    --w:min(90vw, 800px);
+    --h:calc( var(--w) * .6 );
+    --d:calc( var(--w) * .6 );
+
+    /* perspective: 1000px; */
+    position: absolute;
+    
+    /* width: 100%; */
+    /* height: 100%; */
+    width:var(--w);
+    height:var(--h);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* cube */
+main section:nth-child(1) > div {
+    /* transform-style: preserve-3d; */
+    position: relative;
+
+    /* width: 90%;
+    max-width: 800px;
+    height: 100%; */
+
+    width:100%;
+    height:100%;
+
+    display:grid;
+
+}
+
+/* faces */
+main section:nth-child(1) > div div {
+    /* transform-style: preserve-3d; */
+    /* position: absolute; */
+
+    /* width: 100%; */
+    /* height: 100%; */
+    background-color: #0006;
+
+    grid-area:1/1;
+    
+}
+
+/* voor */
+
+main section:nth-child(1) > div div:nth-child(1) {
+    width:var(--w);
+    height:var(--h);
+}
+
+/* acher */
+
+/* bottom */
+main section:nth-child(1) > div div:nth-child(3) {
+    transform-origin: bottom;
+    transform: rotateX(90deg);
+
+    width:var(--w);
+    height:var(--d);
+}
+
+/* top */
+main section:nth-child(1) > div div:nth-child(4) {
+    transform-origin: top;
+    transform: rotateX(-90deg);
+
+    width:var(--w);
+    height:var(--d);
+}
+
+/* links */
+main section:nth-child(1) > div div:nth-child(5) {
+    transform-origin: left;
+    transform: rotateY(90deg);
+
+    width:var(--d);
+    height:var(--h);
+}
+
+/* rechts */
+main section:nth-child(1) > div div:nth-child(6) {
+    transform-origin: right;
+    transform: rotateY(-90deg);
+
+    justify-self: end;
+
+    width:var(--d);
+    height:var(--h);
+}
+
 
 /* section voor de header */
 header{
