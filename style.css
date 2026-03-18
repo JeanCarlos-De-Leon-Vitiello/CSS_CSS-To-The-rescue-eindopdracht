@@ -21,13 +21,6 @@ body {
     --theme: theme1;
 }
 
-
-
-/* thema */
-@container style(--theme: theme2) {
-
-}
-
 body * {
     transform-style:preserve-3d;
 }
@@ -38,11 +31,34 @@ header div:nth-of-type(1) {
     position: relative;
 }
 
+
+/* bron: gradiend op de tekst: https://stackoverflow.com/questions/8384751/css-text-gradient */
 header div:nth-of-type(1) h1 {
-    font-family: "Oi", sans-serif;
-    font-weight: 400;
+    font-family: "oi", sans-serif;
+    font-weight: 700;
     font-size: 4vw;
+    line-height: 1.2em;
     text-align: center;
+    background-image: linear-gradient(180deg,rgb(255, 0, 0) 20%, rgb(255, 255, 255) 50%, rgb(255, 0, 0) 70%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: glow .5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow:
+      10px 10px 0px #ff6b6b,
+      10px 10px 0px #fff36b,
+      10px 10px 0px #ff9b42;
+  }
+  100% {
+    text-shadow:
+      0 0 0px #fff36b,
+      0 0 0px #fff36b,
+      0 0 0px #ff9b42;
+  }
 }
 
 header div:nth-of-type(1) p {
@@ -51,8 +67,8 @@ header div:nth-of-type(1) p {
     color: red;
     position: absolute;
     top: 0%;
-    right: 50%;
-    transform: rotate(20deg);
+    right: 68%;
+    transform: rotate(-40deg);
 }
 
 main{
@@ -769,5 +785,44 @@ body:has(input[name="stop1"][value="stop1"]:checked):has(input[name="stop2"][val
     align-self: center;
 }
 
+/* thema */
+@container style(--theme: theme2) {
+    main section:nth-child(1) {
+        transform: rotateZ('angle');
+    }
+}
 
+header input {
+    pointer-events: auto;
+}
+
+body:has(input[name="thema-wijzigen"]:checked) {
+    --theme: theme2;
+    background-image: url('Image/geld.gif');
+}
+
+body:has(input[name="thema-wijzigen"]:checked) svg {
+    display: none;
+}
+
+body:has(input[name="thema-wijzigen"]:checked) main section:nth-child(3) div div:nth-child(1)  {
+    background-image: url('Image/lambo.gif');
+    background-position: center;
+}
+
+body:has(input[name="thema-wijzigen"]:checked) main section:nth-child(3) div div:nth-child(2)  {
+    background-image: url('Image/win.gif');
+    background-position: center;
+}
+
+body:has(input[name="thema-wijzigen"]:checked) main section:nth-child(3) div div:nth-child(3)  {
+    background-image: url('Image/stack.gif');
+    background-position: center;
+}
+
+body:has(input[name="thema-wijzigen"]:checked) main section:nth-child(3) div div:nth-child(4)  {
+    background-image: url('Image/pepsi.gif');
+    background-position: center;
+    background-size: cover;
+}
 
