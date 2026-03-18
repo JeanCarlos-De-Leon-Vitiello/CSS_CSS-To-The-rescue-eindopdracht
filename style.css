@@ -19,6 +19,7 @@ body {
     pointer-events: none;
 
     --theme: theme1;
+    container-type: normal;
 }
 
 body * {
@@ -787,8 +788,33 @@ body:has(input[name="stop1"][value="stop1"]:checked):has(input[name="stop2"][val
 
 /* thema */
 @container style(--theme: theme2) {
-    main section:nth-child(1) {
-        transform: rotateZ('angle');
+    
+    svg {
+        display: none;
+    }
+
+    main section:nth-child(3) div div:nth-child(1) {
+        background-image: url('Image/lambo.gif');
+        background-position: center;
+        background-size: cover;
+    }
+
+    main section:nth-child(3) div div:nth-child(2) {
+        background-image: url('Image/win.gif');
+        background-position: center;
+        background-size: cover;
+    }
+
+    main section:nth-child(3) div div:nth-child(3) {
+        background-image: url('Image/stack.gif');
+        background-position: center;
+        background-size: cover;
+    }
+
+    main section:nth-child(3) div div:nth-child(4) {
+        background-image: url('Image/pepsi.gif');
+        background-position: center;
+        background-size: cover;
     }
 }
 
@@ -800,29 +826,3 @@ body:has(input[name="thema-wijzigen"]:checked) {
     --theme: theme2;
     background-image: url('Image/geld.gif');
 }
-
-body:has(input[name="thema-wijzigen"]:checked) svg {
-    display: none;
-}
-
-body:has(input[name="thema-wijzigen"]:checked) main section:nth-child(3) div div:nth-child(1)  {
-    background-image: url('Image/lambo.gif');
-    background-position: center;
-}
-
-body:has(input[name="thema-wijzigen"]:checked) main section:nth-child(3) div div:nth-child(2)  {
-    background-image: url('Image/win.gif');
-    background-position: center;
-}
-
-body:has(input[name="thema-wijzigen"]:checked) main section:nth-child(3) div div:nth-child(3)  {
-    background-image: url('Image/stack.gif');
-    background-position: center;
-}
-
-body:has(input[name="thema-wijzigen"]:checked) main section:nth-child(3) div div:nth-child(4)  {
-    background-image: url('Image/pepsi.gif');
-    background-position: center;
-    background-size: cover;
-}
-

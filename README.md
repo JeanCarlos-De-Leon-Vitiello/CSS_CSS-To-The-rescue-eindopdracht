@@ -223,11 +223,14 @@ Tijdens de feedback sessie heb ik mijn progressie kunnen tonen en waarmee ik aan
 
 **Week 2 samenvatting**
 In week 2 ben ik verder gegaan met het bouwen van mijn slotmachine. Aan het begin van de week heb ik gewerkt aan de kast van de machine. ik leerde hoe ik met variabele breedte, hoogte en diepte de verschillende zijdes van een 3D object goed kan opbouwen. Ik kwam er ook achter dat het slimmer is om niet voor elk 3D object een aparte scene te maken, maar om één grote scene te gebruiken waar alle 3D onderdelen in staan. Ik maakte steed een nieuwe 3d scene wat in dit geval onnodig was.
-![figma-ontwerp](./Image/rolle%20.png)
+![figma-ontwerp](./Image/Scherm­afbeelding%202026-03-18%20om%2017.07.28.png)
 
 Later in de week ben ik bezig geweest met de hendel van de slotmachine. Het was de bedoeling om alle onderdelen te nesten, zodat ik de hendel later makkelijker kan animeren. Vooral de balkvormige onderdelen vond ik lastig, omdat ik eerst niet doorhad dat sommige zijdes andere afmetingen moesten krijgen. Met hulp en door te blijven proberen is het uiteindelijk gelukt om het draaimechanisme en de hendelbalk te maken.
+![figma-ontwerp](./Image/Scherm­afbeelding%202026-03-18%20om%2017.07.38.png)
 
-Tijdens de Weekly Nerd van Nils Binder vond ik het interessant om te zien hoe ontwerpen uit Figma in de praktijk nog veranderen tijdens het bouwen. Ook vond ik het opvallend dat het web tegenwoordig op sommige vlakken meer kan dan designsoftware, terwijl ik altijd dacht dat het andersom was. In de feedbacksessie heb ik mijn voortgang laten zien en kreeg ik terug dat mijn uitwerking er al goed uitzag. Volgende week wil ik verder met het animeren van de hendel, het koppelen aan de wielen en het onderzoeken van random() in Safari voor de uitkomst van de slotmachine.
+Tijdens de Weekly Nerd van Nils Binder vond ik het interessant om te zien hoe ontwerpen uit Figma in de praktijk nog veranderen tijdens het bouwen. Ik vond het opvallend dat het web tegenwoordig op sommige vlakken meer kan dan designsoftware, terwijl ik altijd dacht dat het andersom was.
+
+In de feedbacksessie heb ik mijn voortgang laten zien en kreeg ik terug dat mijn uitwerking er al goed uitzag. Volgende week wil ik verder met het animeren van de hendel, het koppelen aan de wielen en het onderzoeken van random() in Safari voor de uitkomst van de slotmachine.
 
 ## Week 3/ Dag 1
 
@@ -318,7 +321,15 @@ Autocomplete als het kan.
 - een variable font zoeken die ik kan gebruiken en onderzoeken hoe ik het kan annimeren
 - thema maken voor het spel
 
+**Vrijdag Feedback Sessie: 3**
+Tijdens de feedback sessie heb ik mijn progressie kunnen tonen en waarmee ik die dag mee bezig was. Ik heb die dag gesproken over de winconditie die als maar niet lukte met de random() van safari. In dat gesprek heb ik de conclussie getrokken om de random van safari achter me te laten en het te gaan proberen door een random te maken met @property. Dit heb ik besloten omdat random ook maar 1 keer werkt bij een click en dat was niet wat ik had verwacht. met de @property wil ik nog een laatste poging gaan doen om een winconditie te maken.
+
 **Week 3 samenvatting**
+In week 3 heb ik mij vooral gericht op de random() functie van Safari en de mogelijkheid om daarmee een werkende winconditie te maken voor mijn slotmachine. Op de eerste dag lukte het wel om random() in mijn spel te gebruiken, maar ik liep vast omdat de uitkomst alleen als stijlwaarde beschikbaar is. Daardoor bleek het moeilijk te zijn om die waarde opnieuw te gebruiken voor spel-logica zoals het controleren van winst. Ook ontdekte ik dat de browser de random-uitkomst kan onthouden waardoor dezelfde uitkomst terugkomt als je een checkbox opnieuw activeert zonder de pagina te verversen.
+
+Op de tweede dag heb ik verder onderzocht of ik met element-shared en container style queries toch een winconditie kon maken. ik kwam erachter dat style queries de uitkomst van random() op deze manier niet kan uitlezen. Daardoor bleek mijn idee voor een random winconditie in pure CSS niet haalbaar. Wel heb ik in deze week veel geleerd over de grenzen van de random() CSS-feature.
+
+Tijdens de Weekly Nerd van Robert Broersma heb ik geleerd dat formulieren veel meer zijn dan alleen invoervelden op een pagina. Ik vond het vooral interessant hoe sterk gebruiksvriendelijkheid, toegankelijkheid en duidelijke communicatie de kwaliteit van een formulier kan beïnvloeden. dingen zoals autocomplete, duidelijke foutmeldingen, logische volgorde en het alleen vragen van noodzakelijke informatie maken een formulier veel prettiger om te gebruiken.
 
 ## Week 4/ Dag 1
 
@@ -338,10 +349,6 @@ samen met niels ben ik gaan kijken of er nog een optie was om een win conditie t
 - Hoe je een text shadow kan stijlen en welke waardes er zijn (horizon - vertical - blur)
 - hoe je meerdere has kan combineren om een bepaalde uitkomst te realiseren.
 
-**Vrijdag Feedback Sessie: 3**
-Tijdens de feedback sessie heb ik mijn progressie kunnen tonen en waarmee ik die dag mee bezig was. Ik heb die dag gesproken over de winconditie die als maar niet lukte met de random() van safari. In dat gesprek heb ik de conclussie getrokken om de random van safari achter me te laten en het te gaan proberen door een random te maken met @property. Dit heb ik besloten omdat random ook maar 1 keer werkt bij een click en dat was niet wat ik had verwacht. met de @property wil ik nog een laatste poging gaan doen om een winconditie te maken.
-
-**Week 4 samenvatting**
 
 
 ## Bronnen
