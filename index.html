@@ -19,7 +19,7 @@
         </div>
 
         <div>
-            <p>0000</p>
+            <input type="checkbox" name="thema-wijzigen" value="thema">
         </div>
     </header>
 
@@ -162,6 +162,8 @@
                     </svg>
                 </div>
             </div>
+
+            <p class="jackpot">jackpot</p>
         </section>
 
         <!-- hendel -->
@@ -191,27 +193,27 @@
                     <div>
                         <!-- faces -->
                         <label for="spin-button">
-                            <!-- <input type="radio" name="spin" value="spin"> -->
+                            <input id="spin-button" type="radio" name="spin" value="spin">
                         </label>
 
                         <label for="spin-button">
-                            <!-- <input type="radio" name="spin" value="spin"> -->
+                            <input id="spin-button" type="radio" name="spin" value="spin">
                         </label>
 
                         <label for="spin-button">
-                            <!-- <input type="radio" name="spin" value="spin"> -->
+                            <input id="spin-button" type="radio" name="spin" value="spin">
                         </label>
 
                         <label for="spin-button">
-                            <!-- <input type="radio" name="spin" value="spin"> -->
+                            <input id="spin-button" type="radio" name="spin" value="spin">
                         </label>
 
                         <label for="spin-button">
-                            <!-- <input type="radio" name="spin" value="spin"> -->
+                            <input id="spin-button" type="radio" name="spin" value="spin">
                         </label>
 
                         <label for="spin-button">
-                            <!-- <input type="radio" name="spin" value="spin"> -->
+                            <input id="spin-button" type="radio" name="spin" value="spin">
                         </label>
                     </div>
                 </div>
@@ -222,9 +224,27 @@
     </main>
 
     <footer>
-        <form action="">
-            <label for="spin-button"></label>
-            <input type="radio" name="spin" id="spin-button" value="spin">
+        <form action="" autocomplete="off">
+            <div>
+                <!-- <label for="spin-button"></label>
+                <input type="radio" name="spin" id="spin-button" value="spin">
+                <input type="submit" value="reset-form"> -->
+
+                <label for="wheel1"> Stop wheel 1
+                    <input type="checkbox" name="stop1" value="stop1" id="wheel1">
+                </label>
+
+                <label for="wheel2"> Stop wheel 2
+                    <input type="checkbox" name="stop2" value="stop2" id="wheel2">
+                </label>
+
+                <label for="wheel3"> Stop wheel 3
+                    <input type="checkbox" name="stop3" value="stop3" id="wheel3">
+                </label>
+            </div>
+            <label for="stop">Reset game
+                <input type="submit" name="stop" value="stop" id="stop">
+            </label>
         </form>
     </footer>
 </body>

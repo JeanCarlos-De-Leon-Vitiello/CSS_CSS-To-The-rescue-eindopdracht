@@ -202,6 +202,46 @@ Viewtransitions loads a new page
 ## Week 2/ Dag 2
 
 **Wat heb ik vandaag gedaan:**
+Vandaah ben ik bezig geweest met het maken van de hendel van de slot machine. Het is de bedoeling om alle onderdelen van de slot machine, zodat als ik het annimeer alles mee draait. Ik vond het heel lastig bij het maken van de balk vormige elementen. Wat ik niet besefte is dat ik de maat van sommige zijdes moest aanpassen om het goed te krijgen. Met behulp van sanne's uitleg begreep ik beter wat ik moest doen. Uiteindelijk heb ik de draaimechanisme af kunnen krijgen en de hendel balk waar later de knop op komt.
+
+**Hoelang duurde het:**
+- het duurde mij 2 uurtjes om de balk en de draai mechanisme goed te krijgen. Maar dat komt omdat het mij maar steeds niet lukte.
+
+**Wat heb ik geleerd:**
+Ik heb geleerd met variable maaten te werken om zo de zijdes van een 3D object met verschilende lengtes in elkaar te kunnen zetten zoals een balk.
+
+**Wat ga ik volgende week doen:**
+- annimatie aan de hendel toevoegen
+- koppelen aan de wielen
+- het random laten spinnen zodat de uitkomst altijd anders is. (random() van safari)
+- win tekst tonen als drie wielen op de zelfde svg stoppen
+
+## Week 3/ Dag 1
+
+**Wat heb ik vandaag gedaan:**
+Vandaag ben ikl bezig geweest met de random() functie die nog alleen werkt in safari. Het was opzich niet zo moeilijk om in mijn spel te implementeren. Waar ik wel tegen aan liep is dat ik maar geen manier kan vinden om een win conditie te maken omdat de random waarde een stijl waarde is die ik nergens anders kan gebruiken. Ik heb geprobeerd met value een winconditie te maken maar dan is het niet echt random maar een voor af bepaalde win. De random een vast waarde geven was een optie maar dan is het ook geen echte random. 
+
+Wat ook een probleem was, was dat de random maar 1 keer werkte. Dit komt omdat als de random geactiveerd wordt het een styling activeerd op een element. Als je dan de checkbox weer clickte om het te deactiveren en dan weer clickte om het te activeren, dan kreeg je dezelfde uitkomst als de eerste keer dat je erop clickte. Pas als je de page een refresh gaf was de random weer echt random maar dan weer alleen bij de eerste click. Als oplossing wilde ik een button type reset gebruiken maar dat werkt niet omdat de random ounthouden blijft in de catch van de browser. Dus de enige oplossing was de submit button omdat dat de page refreshed wanneer je op submit drukt.
+
+Helaas na al dat proberen was de dag voorbij. Aan het einde kreeg ik te horen van een mede student dat er wel een manier is om de waarde uit random te gebruiken, namelijk met (element-shared). Als je dat bij random zet dan slaat het de uitkomst op in een variable naam. Ook van Jelle kreeg ik te horen dat ik container style queries kon gebruiken als een soort if els statement in css. 
+
+**Hoelang duurde het:**
+Ik ben de hele dag bezig geweest zonder een goede uitkomst. Wel met veel nieuwe leer momenten.
+
+**Wat heb ik geleerd:**
+- Ik heb geleerd hoe ik de Safari-only random() functie in mijn spel kan gebruiken.
+- Ik heb geleerd dat random() een stijlwaarde oplevert en daardoor lastig te gebruiken is voor spel-logica zoals een winconditie.
+- Ik heb geleerd dat de browser die styling-uitkomst kan onthouden, ook als ik een checkbox weer uit en aan zet.
+- Ik heb geleerd dat element-shared een manier kan zijn om de uitkomst van random() te bewaren onder een variabelenaam.
+- Ik heb geleerd dat container style queries mogelijk gebruikt kunnen worden als een soort if/else-logica in CSS.
+
+**Wat ga ik morgen doen:**
+- Morgen wil ik met de containe/style queries gaan kijken of ik een win conditie kan maken.
+- kijken of ik met (element-shared) de waarde van de random kan hergebruiken.
+
+## Week 3/ Dag 2
+
+**Wat heb ik vandaag gedaan:**
 
 
 **Hoelang duurde het:**
@@ -210,7 +250,20 @@ Viewtransitions loads a new page
 **Wat heb ik geleerd:**
 
 
-**Wat ga ik morgen doen:**
+**Wat ga ik volgende week doen:**
+- een variable font zoeken die ik kan gebruiken en onderzoeken hoe ik het kan annimeren
+- thema maken voor het spel
+
+## Week 4/ Dag 1
+
+**Wat heb ik vandaag gedaan:**
+
+
+**Hoelang duurde het:**
+
+
+**Wat heb ik geleerd:**
+
 
 
 ## Bronnen

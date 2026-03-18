@@ -16,6 +16,16 @@ body {
 
     perspective: 1000px;
     transform-style:preserve-3d;
+    pointer-events: none;
+
+    --theme: theme1;
+}
+
+
+
+/* thema */
+@container style(--theme: theme2) {
+
 }
 
 body * {
@@ -58,6 +68,7 @@ main{
     position: relative;
 
     rotate: y -20deg;
+    pointer-events: none;
 }
 
 /* section met de draai wielen */
@@ -106,20 +117,6 @@ main section:nth-child(3) > div{
     /* transform-style: preserve-3d; */
 }
 
-/* test annimatie */
-    /* main section:nth-child(3) > div {
-    animation: spin 5s linear infinite;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotateX(360deg) ;
-    }
-    100% {
-        transform: rotateX(0deg);
-    }
-}   */
-
 
 main section:nth-child(3) div div{
     margin: 0px;
@@ -164,6 +161,200 @@ main section:nth-child(3) div div:nth-child(3) {
 main section:nth-child(3) div div:nth-child(4) {
     transform: rotateX(-90deg) translateZ(calc(min(25vw, 200px) / 2));
 }
+
+/* random met @function */
+/* bron: https://codepen.io/enbee81/pen/wvOVypZ?editors=1100 */
+/* bron: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@property */
+@property --spin-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes spin-wheel {
+  0% {
+    --spin-angle: 0deg;
+  }
+  25% {
+    --spin-angle: 90deg;
+  }
+  50% {
+    --spin-angle: 180deg;
+  }
+  75% {
+    --spin-angle: 270deg;
+  }
+  100% {
+    --spin-angle: 360deg;
+  }
+}
+
+/* draai annimatie */
+body:has(input[name="spin"][value="spin"]:checked) main section:nth-child(3) > div:nth-child(1) {
+  transform: rotateX(var(--spin-angle));
+  animation: spin-wheel .1s linear infinite;
+  transition: transform .6s cubic-bezier(.2,.9,.2,1);
+}
+
+body:has(input[name="spin"][value="spin"]:checked) main section:nth-child(3) > div:nth-child(2) {
+  transform: rotateX(var(--spin-angle));
+  animation: spin-wheel .05s linear infinite reverse;
+  transition: transform .6s cubic-bezier(.2,.9,.2,1);
+}
+
+body:has(input[name="spin"][value="spin"]:checked) main section:nth-child(3) > div:nth-child(3) {
+  transform: rotateX(var(--spin-angle));
+  animation: spin-wheel .01s linear infinite;
+  transition: transform .6s cubic-bezier(.2,.9,.2,1);
+}
+
+/* stop wielen */
+body:has(footer #wheel1:checked) main section:nth-child(3) > div:nth-child(1) {
+  animation-play-state: paused;
+  transform: rotateX(round(var(--spin-angle), 90deg));
+}
+
+body:has(footer #wheel2:checked) main section:nth-child(3) > div:nth-child(2) {
+  animation-play-state: paused;
+  transform: rotateX(round(var(--spin-angle), 90deg));
+}
+
+body:has(footer #wheel3:checked) main section:nth-child(3) > div:nth-child(3) {
+  animation-play-state: paused;
+  transform: rotateX(round(var(--spin-angle), 90deg));
+}
+
+/* annimatie voor de hendel */
+@keyframes hendel-spin {
+    0% {
+        transform: rotateX(0deg);
+    }
+    50% {
+        transform: rotateX(-45deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+body:has(input[name="spin"][value="spin"]:checked) main > section:nth-child(4) > div:nth-child(1){
+    animation: hendel-spin .6s linear;
+    
+}
+
+
+/* test annimatie */
+    /* main section:nth-child(3) > div {
+    animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateX(360deg) ;
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}   */
+
+
+/* wheel 1 */
+/* main section:nth-child(3) {
+    container-type: inline-size;
+
+    --rol1: 0;
+    --rol2: 0;
+    --rol3: 0;
+} */
+
+/* body:has(#spin-button:checked) main section:nth-child(3) { */
+    /* wheels */
+        /* --rol1: random(--rol1 element-shared, 8, 14, 1);
+        --rol2: random(--rol2 element-shared, 8, 14, 1);
+        --rol3: random(--rol3 element-shared, 8, 14, 1); */
+
+        /* --rol1: 8;
+        --rol2: 8;
+        --rol3: 8; */
+/* } */
+
+/* main section:nth-child(3) > div:nth-child(1) {
+    transform: rotateX(calc(var(--rol1) * 90deg));
+    transition: transform 1.6s cubic-bezier(.2,.9,.2,1);
+}
+
+main section:nth-child(3) > div:nth-child(2) {
+    transform: rotateX(calc(var(--rol2) * 90deg));
+    transition: transform 1.6s cubic-bezier(.2,.9,.2,1);
+}
+
+main section:nth-child(3) > div:nth-child(3) {
+    transform: rotateX(calc(var(--rol3) * 90deg));
+    transition: transform 1.6s cubic-bezier(.2,.9,.2,1);
+} */
+
+/* style queries */
+/* bron: https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_size_and_style_queries */
+.jackpot {
+    display: none;
+}
+
+/* @container style(--rol1: 8) and style(--rol2: 8) and style(--rol3: 8) {
+  .jackpot {
+        display: block;
+    }
+}
+
+@container style(--rol1: 9) and style(--rol2: 9) and style(--rol3: 9) {
+  .jackpot {
+        display: block;
+    }
+}
+
+@container style(--rol1: 10) and style(--rol2: 10) and style(--rol3: 10) {
+  .jackpot {
+        display: block;
+    }
+}
+
+@container style(--rol1: 11) and style(--rol2: 11) and style(--rol3: 11) {
+  .jackpot {
+        display: block;
+    }
+}
+
+@container style(--rol1: 12) and style(--rol2: 12) and style(--rol3: 12) {
+  .jackpot {
+        display: block;
+    }
+}
+
+@container style(--rol1: 13) and style(--rol2: 13) and style(--rol3: 13) {
+  .jackpot {
+        display: block;
+    }
+}
+
+@container style(--rol1: 14) and style(--rol2: 14) and style(--rol3: 14) {
+  .jackpot {
+        display: block;
+    }
+} */
+
+/* random */
+/* bron: https://webkit.org/blog/17285/rolling-the-dice-with-css-random/ */
+/* @keyframes spin {
+  from { transform: rotateX(0deg); }
+  to {
+    transform: rotateX(
+      calc(
+        random(8turn, 14turn, 1turn)
+        + random(0deg, 270deg, 90deg)
+      )
+    );
+  }
+} */
+
 
 /* section voor de kast */
 /* scene */
@@ -280,24 +471,6 @@ footer {
     height: 20vh;
 }
 
-/* spin actie knop */
-body:has(input[name="spin"][value="spin"]:checked) main section:nth-child(3) > div {
-    animation: spin 1.6s cubic-bezier(.2,.9,.2,1) 1 forwards;
-}
-
-/* bron: https://webkit.org/blog/17285/rolling-the-dice-with-css-random/?utm_source=chatgpt.com */
-@keyframes spin {
-  from { transform: rotateX(0deg); }
-  to {
-    transform: rotateX(
-      calc(
-        random(8turn, 14turn, 1turn)
-        + random(0deg, 270deg, 90deg)
-      )
-    );
-  }
-}
-
 /* section voor de hendel */
 
 /* draai mechanisme */
@@ -330,6 +503,8 @@ main > section:nth-child(4) > div:nth-child(1) {
     justify-content: center;
     align-items: end;
     align-self: end;
+
+    transform-origin: bottom;
 }
 
 main > section:nth-child(4) > div:nth-child(1) > div:nth-of-type(-n + 6) {
@@ -463,6 +638,7 @@ main > section:nth-child(4) label {
     width: 3vw;
     height: 3vh;
     background-color: blueviolet;
+    pointer-events: auto;
 }
 
 main > section:nth-child(4) {
@@ -488,3 +664,110 @@ main > section:nth-child(4) {
     }
 
 }
+
+/* win conditie */
+/* body:has(input[name="wheel-1"][value="0"]:checked)
+    :has(input[name="wheel-2"][value="0"]:checked)
+    :has(input[name="wheel-3"][value="0"]:checked) {
+    
+    background-color: red;
+  
+} */
+
+/* buttons om de annimatie te stoppen */
+/* bron: https://www.bestcssbuttongenerator.com/#/18 */
+footer{
+    pointer-events: none;
+    width: min(90vw, 800px);
+    rotate: y -20deg;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+form div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+
+    &label:nth-of-type(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    &label:nth-of-type(1) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    &label:nth-of-type(1) {
+        grid-column: 1;
+        grid-row: 3;
+    }
+}
+
+
+
+form input {
+    display: none;
+}
+
+form label {
+    box-shadow: 3px 4px 0px 0px #8a2a21;
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+	background-color:#c62d1f;
+	border-radius:18px;
+	border:1px solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	padding:7px 25px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #810e05;
+
+    pointer-events: auto;
+
+    &:hover {
+        background: linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+	    background-color:#f24437;
+    }
+
+    &:active {
+        position:relative;
+	    top:1px;
+        transform: scale(0.9);
+    }
+
+    &::selection {
+        opacity: 0;
+    }
+}
+
+form label {
+    display: none;
+}
+
+body:has(input[name="spin"][value="spin"]:checked) form div label{
+    display: block;
+    width: 15vw;
+}
+
+body:has(input[name="stop1"][value="stop1"]:checked) form div label:nth-of-type(1),
+body:has(input[name="stop2"][value="stop2"]:checked) form div label:nth-of-type(2),
+body:has(input[name="stop3"][value="stop3"]:checked) form div label:nth-of-type(3) {
+    opacity: 0%;
+}
+
+body:has(input[name="stop1"][value="stop1"]:checked):has(input[name="stop2"][value="stop2"]:checked):has(input[name="stop3"][value="stop3"]:checked) form > label {
+    display: block;
+    width: 15vw;
+    align-self: center;
+}
+
+
+
