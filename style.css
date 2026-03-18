@@ -34,6 +34,7 @@ header div:nth-of-type(1) {
 
 
 /* bron: gradiend op de tekst: https://stackoverflow.com/questions/8384751/css-text-gradient */
+/* bron: tekst shadow: https://css-tricks.com/creating-playful-effects-with-css-text-shadows/ */
 header div:nth-of-type(1) h1 {
     font-family: "oi", sans-serif;
     font-weight: 700;
@@ -788,7 +789,7 @@ body:has(input[name="stop1"][value="stop1"]:checked):has(input[name="stop2"][val
 
 /* thema */
 @container style(--theme: theme2) {
-    
+
     svg {
         display: none;
     }

@@ -349,32 +349,51 @@ samen met niels ben ik gaan kijken of er nog een optie was om een win conditie t
 - Hoe je een text shadow kan stijlen en welke waardes er zijn (horizon - vertical - blur)
 - hoe je meerdere has kan combineren om een bepaalde uitkomst te realiseren.
 
+**Eindreflectie**
+Voor mijn eindopdracht heb ik een slotmachine gemaakt met CSS als belangrijkste techniek. Ik heb gewerkt met 3D objecten, animaties, gradients, themaswitches en experimentele CSS-features zoals random(), @property, :has() en style queries. Ik ben tevreden met het eindresultaat omdat de slotmachine het gevoel geeft van een echt slot machine met draaiende wielen, een hendel. In mijn code ben ik vooral trots op het werken in de 3D omgeving en het feit dat het me is gelukt om onderdelen te nesten en animeren. Ook ben ik blij dat ik meerdere technieken heb durven uitproberen in plaats van alleen voor de makkelijkste oplossing te kiezen bij het maken van de winconditie.
+
+Wat goed ging is dat ik het 3D gedeelte steeds beter begon te begrijpen. Nadat ik eenmaal doorhad hoe de zijdes van een cube werken met breedte, hoogte, diepte en transform kon ik dat ook gebruiken op andere onderdelen zoals de kast en de hendel. Ook het gebruik van custom properties en @property vond ik interessant, omdat ik daarmee beter begreep hoe CSS-animaties met waardes kunnen werken. 
+
+Wat uitdagend was is dat ik merkte dat pure CSS duidelijke grenzen heeft zodra je logica wilt maken zoals een winconditie bij een slotmachine, heb je echt javascript voor nodig.
+
+Ik heb ook veel experimenten gedaan die niet werkten zoals ik had gehoopt. Het grootste voorbeeld daarvan was het gebruik van Safari’s random() functie om een echte winconditie te maken. Ik kon de random waarde wel gebruiken voor styling en animatie maar niet op een betrouwbare manier vergelijken om te bepalen of iemand gewonnen had. Ook probeerde ik style queries en element-shared te gebruiken om die random waarden alsnog te hergebruiken, maar dat bleek in de praktijk niet voldoende voor echte spel-logica. Daarnaast heb ik geëxperimenteerd met steps() voor de draaiende cubes, maar dat gaf niet het vloeiende effect dat ik zocht. Juist die mislukte experimenten hebben mij veel geleerd over wat CSS wel en niet goed kan.
+
+Door deze opdracht heb ik nieuwe inzichten gekregen in CSS. Ik heb gemerkt dat CSS heel sterk is in vormgeving, animatie, states en visuele interactie. Je kunt er veel meer mee bouwen dan ik eerst dacht vooral als je experimentele features meeneemt(die eigelijk heel handig zijn en ik niet snap waarom het niet al in alle browser zit). Tegelijkertijd heb ik ook geleerd dat CSS minder geschikt is voor echte programmeerlogica zoals bij een spel. Dat verschil tussen styling en logica begrijp ik nu veel beter. CSS is krachtig maar niet altijd de juiste taall voor elk probleem.
 
 
 ## Bronnen
-Cube:
-https://miocene.io/post/3d-cube-with-css/
+- Cube:
+  https://miocene.io/post/3d-cube-with-css/
 
-Transform origin: 
-https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transform-origin
+- Transform origin: 
+  https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transform-origin
 
-Random (Safari only):
-https://webkit.org/blog/17285/rolling-the-dice-with-css-random/
+- Random (Safari only):
+  https://webkit.org/blog/17285/rolling-the-dice-with-css-random/
 
 - Google Fonts:
   https://fonts.googleapis.com/css2?family=Oi&family=Oswald:wght@200..700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reddit+Sans+Condensed:wght@200..900&display=swap
+
 - CSS text gradient:
   https://stackoverflow.com/questions/8384751/css-text-gradient
+
 - CSS custom properties animatie voorbeeld:
   https://codepen.io/enbee81/pen/wvOVypZ?editors=1100
+
 - MDN `@property`:
   https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@property
+  
 - MDN container size en style queries:
   https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_size_and_style_queries
+
 - Safari / WebKit `random()`:
   https://webkit.org/blog/17285/rolling-the-dice-with-css-random/
+
 - CSS button generator:
   https://www.bestcssbuttongenerator.com/#/18
+
+- text-shadow: 
+  https://css-tricks.com/creating-playful-effects-with-css-text-shadows/  
 
 
 Chat GPT bronnen:
